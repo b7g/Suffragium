@@ -2,7 +2,7 @@ extends ColorRect
 
 var _game_config: ConfigFile = null
 var _playtime: float = 0
-var _last_played: int = 0
+var _last_played = 0
 
 onready var _label_title := $MC/VC/HC/VC/MC/LabelTitle
 onready var _label_description := $MC/VC/SC/MC/LabelDescription
