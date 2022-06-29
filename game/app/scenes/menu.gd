@@ -6,7 +6,7 @@ var _res_game_card = preload("res://app/scenes/game_card.tscn")
 var _res_game_card_add_yours = preload("res://app/scenes/game_card_add_yours.tscn")
 
 onready var _tab_container: TabContainer = $TabContainer
-onready var _games_grid: GridContainer = $TabContainer/Games/MC/VC/HC2/GC
+onready var _games_grid: GridContainer = $TabContainer/Games/SC/MC/GC
 
 
 func _ready():
