@@ -73,7 +73,7 @@ func _on_ButtonParticipate_pressed():
 func _on_ButtonReportBug_pressed():
 	var previous_tab = $TabContainer.current_tab
 	_tab_container.set_current_tab(1)
-	_scroll_to(previous_tab, $TabContainer/About/MC/VC/SectionReportBug.rect_position.y)
+	_scroll_to(previous_tab, _about_tab.get_line_absolute_height("T_REPORT_A_BUG"))
 
 
 func _on_ButtonSettings_pressed():
