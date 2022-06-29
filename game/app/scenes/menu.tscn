@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://app/scenes/About.gd" type="Script" id=1]
 [ext_resource path="res://app/images/suffragium_badge_36.png" type="Texture" id=2]
@@ -19,10 +19,6 @@ default_font = SubResource( 10 )
 [sub_resource type="DynamicFont" id=21]
 size = 24
 font_data = ExtResource( 6 )
-
-[sub_resource type="StyleBoxFlat" id=22]
-border_width_top = 2
-border_color = Color( 0.266667, 0.266667, 0.266667, 1 )
 
 [node name="Menu" type="VBoxContainer"]
 anchor_right = 1.0
@@ -228,82 +224,66 @@ script = ExtResource( 7 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Settings"]
 margin_right = 1024.0
-margin_bottom = 202.0
+margin_bottom = 158.0
 size_flags_horizontal = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
 
 [node name="VC" type="VBoxContainer" parent="TabContainer/Settings/MC"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 1008.0
-margin_bottom = 186.0
+margin_right = 1024.0
+margin_bottom = 158.0
 
 [node name="Label" type="Label" parent="TabContainer/Settings/MC/VC"]
-margin_right = 992.0
+margin_right = 1024.0
 margin_bottom = 29.0
 custom_fonts/font = SubResource( 21 )
 text = "T_SETTINGS"
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Settings/MC/VC"]
 margin_top = 33.0
-margin_right = 992.0
+margin_right = 1024.0
 margin_bottom = 49.0
 custom_constants/margin_top = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HC" type="HBoxContainer" parent="TabContainer/Settings/MC/VC"]
+[node name="VC" type="VBoxContainer" parent="TabContainer/Settings/MC/VC"]
+margin_left = 362.0
 margin_top = 53.0
-margin_right = 992.0
-margin_bottom = 170.0
-alignment = 1
-
-[node name="VC" type="VBoxContainer" parent="TabContainer/Settings/MC/VC/HC"]
-margin_left = 346.0
-margin_right = 646.0
-margin_bottom = 117.0
+margin_right = 662.0
+margin_bottom = 158.0
 rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
 custom_constants/separation = 8
 
-[node name="HC" type="HBoxContainer" parent="TabContainer/Settings/MC/VC/HC/VC"]
-margin_right = 300.0
-margin_bottom = 25.0
-alignment = 2
-
-[node name="ButtonResetDefaults" type="Button" parent="TabContainer/Settings/MC/VC/HC/VC/HC"]
+[node name="ButtonResetDefaults" type="Button" parent="TabContainer/Settings/MC/VC/VC"]
 margin_left = 110.0
 margin_right = 300.0
 margin_bottom = 25.0
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 text = "T_RESET_TO_DEFAULTS"
 
-[node name="HSeparator" type="HSeparator" parent="TabContainer/Settings/MC/VC/HC/VC"]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Settings/MC/VC/VC"]
 margin_top = 33.0
 margin_right = 300.0
-margin_bottom = 49.0
-custom_constants/separation = 16
-custom_styles/separator = SubResource( 22 )
+margin_bottom = 37.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HC2" type="HBoxContainer" parent="TabContainer/Settings/MC/VC/HC/VC"]
-margin_top = 57.0
+[node name="Language" type="HBoxContainer" parent="TabContainer/Settings/MC/VC/VC"]
+margin_top = 45.0
 margin_right = 300.0
-margin_bottom = 82.0
+margin_bottom = 70.0
 
-[node name="Label" type="Label" parent="TabContainer/Settings/MC/VC/HC/VC/HC2"]
+[node name="Label" type="Label" parent="TabContainer/Settings/MC/VC/VC/Language"]
 margin_top = 3.0
 margin_right = 148.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "T_LANGUAGE"
 
-[node name="LanguageSelection" type="OptionButton" parent="TabContainer/Settings/MC/VC/HC/VC/HC2"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Settings/MC/VC/VC/Language"]
 margin_left = 152.0
 margin_right = 300.0
 margin_bottom = 25.0
@@ -312,19 +292,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HC4" type="HBoxContainer" parent="TabContainer/Settings/MC/VC/HC/VC"]
-margin_top = 90.0
+[node name="SmoothScroll" type="HBoxContainer" parent="TabContainer/Settings/MC/VC/VC"]
+margin_top = 78.0
 margin_right = 300.0
-margin_bottom = 117.0
+margin_bottom = 105.0
 
-[node name="Label" type="Label" parent="TabContainer/Settings/MC/VC/HC/VC/HC4"]
+[node name="Label" type="Label" parent="TabContainer/Settings/MC/VC/VC/SmoothScroll"]
 margin_top = 4.0
 margin_right = 176.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "T_SMOOTH_SCROLLING"
 
-[node name="CheckBoxSmoothScroll" type="CheckBox" parent="TabContainer/Settings/MC/VC/HC/VC/HC4"]
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Settings/MC/VC/VC/SmoothScroll"]
 margin_left = 180.0
 margin_right = 300.0
 margin_bottom = 27.0
@@ -337,6 +317,6 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="MenuBar/VC/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
 [connection signal="item_selected" from="TabContainer/Games/Toolbar/OptionButtonSorting" to="." method="_on_OptionButtonSorting_item_selected"]
 [connection signal="meta_clicked" from="TabContainer/About/MC/RichTextLabel" to="TabContainer/About" method="_on_RichTextLabel_meta_clicked"]
-[connection signal="pressed" from="TabContainer/Settings/MC/VC/HC/VC/HC/ButtonResetDefaults" to="TabContainer/Settings" method="_on_ButtonResetDefaults_pressed"]
-[connection signal="item_selected" from="TabContainer/Settings/MC/VC/HC/VC/HC2/LanguageSelection" to="TabContainer/Settings" method="_on_LanguageSelection_item_selected"]
-[connection signal="toggled" from="TabContainer/Settings/MC/VC/HC/VC/HC4/CheckBoxSmoothScroll" to="TabContainer/Settings" method="_on_CheckBoxSmoothScroll_toggled"]
+[connection signal="pressed" from="TabContainer/Settings/MC/VC/VC/ButtonResetDefaults" to="TabContainer/Settings" method="_on_ButtonResetDefaults_pressed"]
+[connection signal="item_selected" from="TabContainer/Settings/MC/VC/VC/Language/OptionButton" to="TabContainer/Settings" method="_on_LanguageSelection_item_selected"]
+[connection signal="toggled" from="TabContainer/Settings/MC/VC/VC/SmoothScroll/CheckBox" to="TabContainer/Settings" method="_on_CheckBoxSmoothScroll_toggled"]
