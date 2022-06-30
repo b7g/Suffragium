@@ -10,7 +10,6 @@ onready var _texture_icon_rect := $Card/TitleSection/icon
 onready var _label_playtime := $Card/TitleSection/VC/HC/LabelPlaytimeNumber
 onready var _label_playtime_unit := $Card/TitleSection/VC/HC/LabelPlaytimeUnit
 
-
 onready var _popup_label_title := $PopupDialogInfo/VC/TitleSection/HC/Title/LabelTitle
 onready var _popup_label_description := $PopupDialogInfo/VC/InfoSection/HC/Description
 onready var _popup_icon_rect := $PopupDialogInfo/VC/TitleSection/HC/TextureRectIcon
@@ -21,7 +20,6 @@ onready var _popup_playtime_2 := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/La
 onready var _popup_playtime_unit := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeUnit
 onready var _popup_playtime_unit_2 := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeUnit2
 onready var _popup_label_highscore := $PopupDialogInfo/VC/TitleSection/HC/HighScore/LabelHighscore
-
 
 
 func setup(game_config: ConfigFile):
