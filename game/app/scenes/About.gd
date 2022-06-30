@@ -18,6 +18,7 @@ func set_text(val: String):
 	text = val
 	set_process(true)
 
+
 # _write_to_label() will fail if the node is outside the tree
 # to prevent this it checks every frame if it can update the text and stops the check if it can
 func _process(_delta):
@@ -25,11 +26,14 @@ func _process(_delta):
 		_write_to_label()
 		set_process(false)
 
+
 func _write_to_label():
 	# Fails when weird stuff happens with scene transitions. Don't ask me why.
-	# Also fails in editor sometimes. But that can be savely ignored.
-	assert(is_instance_valid(_label))
-	
+	# Also fails in editor sometimes. 
+	# It can be savely ignored because it is called more than once!
+	if !is_instance_valid(_label):
+		return
+
 	_label.clear()
 	for line in text.split("\n"):
 		var is_title: bool = line.begins_with(title_key)
