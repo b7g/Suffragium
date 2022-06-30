@@ -16,10 +16,14 @@ func _notification(what):
 
 func set_text(val: String):
 	text = val
-	_write_def()
+	_write_to_label()
 
 
 func _write_to_label():
+	# Fails when weird stuff happens with scene transitions. Don't ask me why.
+	# Also fails in editor sometimes. But that can be savely ignored.
+	assert(is_instance_valid(_label))
+	
 	_label.clear()
 	for line in text.split("\n"):
 		var is_title: bool = line.begins_with(title_key)

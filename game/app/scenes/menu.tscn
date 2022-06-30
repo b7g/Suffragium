@@ -1,18 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://app/scenes/About.gd" type="Script" id=1]
 [ext_resource path="res://app/images/suffragium_badge_36.png" type="Texture" id=2]
 [ext_resource path="res://app/style/main_theme.tres" type="Theme" id=3]
-[ext_resource path="res://app/scenes/aboutpage_title_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://app/style/title_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://app/scenes/menu.gd" type="Script" id=5]
-[ext_resource path="res://shared/fonts/roboto/roboto_black.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://app/scenes/settings.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=19]
-
-[sub_resource type="DynamicFont" id=21]
-size = 24
-font_data = ExtResource( 6 )
 
 [node name="Menu" type="VBoxContainer"]
 anchor_right = 1.0
@@ -85,26 +80,31 @@ __meta__ = {
 [node name="Games" type="VBoxContainer" parent="TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 16
 
-[node name="Toolbar" type="HBoxContainer" parent="TabContainer/Games"]
+[node name="MC" type="MarginContainer" parent="TabContainer/Games"]
 margin_right = 1024.0
-margin_bottom = 35.0
-size_flags_vertical = 0
+margin_bottom = 51.0
+
+[node name="Toolbar" type="HBoxContainer" parent="TabContainer/Games/MC"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1019.0
+margin_bottom = 46.0
 alignment = 2
 
-[node name="Label" type="Label" parent="TabContainer/Games/Toolbar"]
-margin_right = 761.0
-margin_bottom = 35.0
+[node name="Label" type="Label" parent="TabContainer/Games/MC/Toolbar"]
+margin_right = 751.0
+margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
 text = "T_GAMES"
 valign = 1
 
-[node name="Label2" type="Label" parent="TabContainer/Games/Toolbar"]
-margin_left = 765.0
-margin_right = 849.0
-margin_bottom = 35.0
+[node name="Label2" type="Label" parent="TabContainer/Games/MC/Toolbar"]
+margin_left = 755.0
+margin_right = 839.0
+margin_bottom = 41.0
 size_flags_vertical = 1
 text = "T_SORTING"
 valign = 1
@@ -112,23 +112,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionButtonSorting" type="OptionButton" parent="TabContainer/Games/Toolbar"]
-margin_left = 853.0
-margin_right = 1024.0
-margin_bottom = 35.0
+[node name="OptionButtonSorting" type="OptionButton" parent="TabContainer/Games/MC/Toolbar"]
+margin_left = 843.0
+margin_right = 1014.0
+margin_bottom = 41.0
 text = "T_ALPHABETICAL"
 items = [ "T_LONGST_PLAYTIME", null, false, 0, null, "T_ALPHABETICAL", null, false, 1, null, "T_LAST_PLAYED", null, false, 2, null ]
 selected = 1
 
 [node name="SC" type="ScrollContainer" parent="TabContainer/Games"]
-margin_top = 51.0
+margin_top = 55.0
 margin_right = 1024.0
 margin_bottom = 548.0
 size_flags_vertical = 3
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Games/SC"]
+margin_right = 10.0
+margin_bottom = 10.0
 
 [node name="GC" type="GridContainer" parent="TabContainer/Games/SC/MC"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 5.0
+margin_bottom = 5.0
 custom_constants/vseparation = 4
 custom_constants/hseparation = 4
 columns = 3
@@ -170,45 +176,18 @@ title_font = ExtResource( 4 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/About"]
 margin_right = 1024.0
-margin_bottom = 1000.0
+margin_bottom = 1010.0
 size_flags_horizontal = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/About/MC"]
-margin_right = 1024.0
-margin_bottom = 1000.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1019.0
+margin_bottom = 1005.0
 rect_min_size = Vector2( 0, 1000 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "T_ABOUT_SUFFRAGIUM
-T_ABOUT_SUFFRAGIUM_1
-T_ABOUT_SUFFRAGIUM_2
-
-T_PARTICIPATE
-T_PARTICIPATE_1
-
-T_PARTICIPATE_PLEASE_NOTE_1
-T_PARTICIPATE_PLEASE_NOTE_2
-T_PARTICIPATE_PLEASE_NOTE_3
-
-T_PARTICIPATE_POSSIBILITIES
-T_PARTICIPATE_POSSIBILITIES_1
-T_PARTICIPATE_POSSIBILITIES_2
-T_PARTICIPATE_POSSIBILITIES_3
-T_PARTICIPATE_POSSIBILITIES_4
-
-T_PARTICIPATE_GUIDES
-Contributing to Suffragium
-How to add a game
-T_ABOUT_SUFFRAGIUM
-
-T_REPORT_A_BUG
-T_PARTICIPATE_PLEASE_NOTE_1
-T_PARTICIPATE_PLEASE_NOTE_2
-T_PARTICIPATE_PLEASE_NOTE_3
-T_REPORT_A_BUG_1
-Create an issue on Github
-"
 scroll_active = false
 
 [node name="Settings" type="ScrollContainer" parent="TabContainer"]
@@ -219,60 +198,62 @@ script = ExtResource( 7 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Settings"]
 margin_right = 1024.0
-margin_bottom = 170.0
+margin_bottom = 197.0
 size_flags_horizontal = 3
 
 [node name="VC" type="VBoxContainer" parent="TabContainer/Settings/MC"]
-margin_right = 1024.0
-margin_bottom = 170.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1019.0
+margin_bottom = 192.0
 
 [node name="Label" type="Label" parent="TabContainer/Settings/MC/VC"]
-margin_right = 1024.0
-margin_bottom = 29.0
-custom_fonts/font = SubResource( 21 )
+margin_right = 1014.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 4 )
 text = "T_SETTINGS"
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Settings/MC/VC"]
-margin_top = 33.0
-margin_right = 1024.0
-margin_bottom = 49.0
+margin_top = 45.0
+margin_right = 1014.0
+margin_bottom = 66.0
 custom_constants/margin_top = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VC" type="VBoxContainer" parent="TabContainer/Settings/MC/VC"]
-margin_left = 362.0
-margin_top = 53.0
-margin_right = 662.0
-margin_bottom = 158.0
+margin_left = 357.0
+margin_top = 70.0
+margin_right = 657.0
+margin_bottom = 187.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
 custom_constants/separation = 8
 
 [node name="ButtonResetDefaults" type="Button" parent="TabContainer/Settings/MC/VC/VC"]
-margin_left = 110.0
+margin_left = 98.0
 margin_right = 300.0
-margin_bottom = 25.0
+margin_bottom = 35.0
 size_flags_horizontal = 8
 text = "T_RESET_TO_DEFAULTS"
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/Settings/MC/VC/VC"]
-margin_top = 33.0
+margin_top = 43.0
 margin_right = 300.0
-margin_bottom = 37.0
+margin_bottom = 47.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Language" type="HBoxContainer" parent="TabContainer/Settings/MC/VC/VC"]
-margin_top = 45.0
+margin_top = 55.0
 margin_right = 300.0
-margin_bottom = 70.0
+margin_bottom = 90.0
 
 [node name="Label" type="Label" parent="TabContainer/Settings/MC/VC/VC/Language"]
-margin_top = 3.0
+margin_top = 8.0
 margin_right = 148.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
@@ -288,19 +269,18 @@ __meta__ = {
 }
 
 [node name="SmoothScroll" type="HBoxContainer" parent="TabContainer/Settings/MC/VC/VC"]
-margin_top = 78.0
+margin_top = 98.0
 margin_right = 300.0
-margin_bottom = 105.0
+margin_bottom = 117.0
 
 [node name="Label" type="Label" parent="TabContainer/Settings/MC/VC/VC/SmoothScroll"]
-margin_top = 4.0
-margin_right = 176.0
-margin_bottom = 23.0
+margin_right = 280.0
+margin_bottom = 19.0
 size_flags_horizontal = 3
 text = "T_SMOOTH_SCROLLING"
 
 [node name="CheckBox" type="CheckBox" parent="TabContainer/Settings/MC/VC/VC/SmoothScroll"]
-margin_left = 180.0
+margin_left = 284.0
 margin_right = 300.0
 margin_bottom = 19.0
 flat = true
@@ -310,7 +290,7 @@ flat = true
 [connection signal="pressed" from="MenuBar/VC/ButtonParticipate" to="." method="_on_ButtonParticipate_pressed"]
 [connection signal="pressed" from="MenuBar/VC/ButtonReportBug" to="." method="_on_ButtonReportBug_pressed"]
 [connection signal="pressed" from="MenuBar/VC/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
-[connection signal="item_selected" from="TabContainer/Games/Toolbar/OptionButtonSorting" to="." method="_on_OptionButtonSorting_item_selected"]
+[connection signal="item_selected" from="TabContainer/Games/MC/Toolbar/OptionButtonSorting" to="." method="_on_OptionButtonSorting_item_selected"]
 [connection signal="meta_clicked" from="TabContainer/About/MC/RichTextLabel" to="TabContainer/About" method="_on_RichTextLabel_meta_clicked"]
 [connection signal="pressed" from="TabContainer/Settings/MC/VC/VC/ButtonResetDefaults" to="TabContainer/Settings" method="_on_ButtonResetDefaults_pressed"]
 [connection signal="item_selected" from="TabContainer/Settings/MC/VC/VC/Language/OptionButton" to="TabContainer/Settings" method="_on_LanguageSelection_item_selected"]
