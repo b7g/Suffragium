@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://app/scenes/About.gd" type="Script" id=1]
+[ext_resource path="res://app/scenes/about.gd" type="Script" id=1]
 [ext_resource path="res://app/images/suffragium_badge_36.png" type="Texture" id=2]
 [ext_resource path="res://app/style/main_theme.tres" type="Theme" id=3]
 [ext_resource path="res://app/style/title_font.tres" type="DynamicFont" id=4]
@@ -13,22 +13,17 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
-custom_constants/separation = 0
 script = ExtResource( 5 )
 
-[node name="MenuBar" type="MarginContainer" parent="."]
+[node name="MenuBar" type="PanelContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 52.0
-custom_constants/margin_right = 8
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
+margin_bottom = 56.0
 
 [node name="VC" type="HBoxContainer" parent="MenuBar"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 1016.0
-margin_bottom = 44.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 46.0
 
 [node name="LogoBadge" type="TextureRect" parent="MenuBar/VC"]
 margin_right = 36.0
@@ -36,38 +31,38 @@ margin_bottom = 36.0
 texture = ExtResource( 2 )
 
 [node name="ButtonGames" type="Button" parent="MenuBar/VC"]
-margin_left = 40.0
-margin_right = 135.0
+margin_left = 41.0
+margin_right = 136.0
 margin_bottom = 36.0
 text = "T_GAMES"
 
 [node name="ButtonAbout" type="Button" parent="MenuBar/VC"]
-margin_left = 139.0
-margin_right = 335.0
+margin_left = 141.0
+margin_right = 337.0
 margin_bottom = 36.0
 text = "T_ABOUT_SUFFRAGIUM"
 
 [node name="ButtonParticipate" type="Button" parent="MenuBar/VC"]
-margin_left = 339.0
-margin_right = 477.0
+margin_left = 342.0
+margin_right = 480.0
 margin_bottom = 36.0
 text = "T_PARTICIPATE"
 
 [node name="ButtonReportBug" type="Button" parent="MenuBar/VC"]
-margin_left = 481.0
-margin_right = 637.0
+margin_left = 485.0
+margin_right = 641.0
 margin_bottom = 36.0
 text = "T_REPORT_A_BUG"
 
 [node name="ButtonSettings" type="Button" parent="MenuBar/VC"]
-margin_left = 892.0
-margin_right = 1008.0
+margin_left = 888.0
+margin_right = 1004.0
 margin_bottom = 36.0
 size_flags_horizontal = 10
 text = "T_SETTINGS"
 
 [node name="TabContainer" type="TabContainer" parent="."]
-margin_top = 52.0
+margin_top = 61.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_vertical = 3
@@ -92,7 +87,7 @@ margin_bottom = 41.0
 alignment = 2
 
 [node name="Label" type="Label" parent="TabContainer/Games/MC/Toolbar"]
-margin_right = 731.0
+margin_right = 729.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -101,8 +96,8 @@ text = "T_GAMES"
 valign = 1
 
 [node name="Label2" type="Label" parent="TabContainer/Games/MC/Toolbar"]
-margin_left = 735.0
-margin_right = 819.0
+margin_left = 734.0
+margin_right = 818.0
 margin_bottom = 41.0
 size_flags_vertical = 1
 text = "T_SORTING"
@@ -120,9 +115,9 @@ items = [ "T_LONGST_PLAYTIME", null, false, 0, null, "T_ALPHABETICAL", null, fal
 selected = 1
 
 [node name="SC" type="ScrollContainer" parent="TabContainer/Games"]
-margin_top = 60.0
+margin_top = 61.0
 margin_right = 1024.0
-margin_bottom = 548.0
+margin_bottom = 539.0
 size_flags_vertical = 3
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Games/SC"]
@@ -223,13 +218,13 @@ script = ExtResource( 7 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Settings"]
 margin_right = 1024.0
-margin_bottom = 212.0
+margin_bottom = 214.0
 size_flags_horizontal = 3
 
 [node name="VC" type="VBoxContainer" parent="TabContainer/Settings/MC"]
 margin_left = 15.0
 margin_right = 1009.0
-margin_bottom = 197.0
+margin_bottom = 199.0
 
 [node name="Label" type="Label" parent="TabContainer/Settings/MC/VC"]
 margin_right = 1014.0

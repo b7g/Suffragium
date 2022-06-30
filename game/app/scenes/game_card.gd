@@ -1,4 +1,4 @@
-extends MarginContainer
+extends PanelContainer
 
 var _game_config: ConfigFile = null
 var _playtime: float = 0
@@ -15,8 +15,8 @@ onready var _popup_label_description := $PopupDialogInfo/VC/InfoSection/HC/Descr
 onready var _popup_icon_rect := $PopupDialogInfo/VC/TitleSection/HC/TextureRectIcon
 onready var _popup_label_author := $PopupDialogInfo/VC/InfoSection/HC/VC/LabelAuthor
 onready var _popup_label_version := $PopupDialogInfo/VC/InfoSection/HC/VC/LabelVersion
-onready var _popup_label_playtime := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeNumber
-onready var _popup_label_playtime_unit := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeUnit
+onready var _popup_playtime := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeNumber
+onready var _popup_playtime_unit := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeUnit
 onready var _popup_label_highscore := $PopupDialogInfo/VC/TitleSection/HC/HighScore/LabelHighscore
 
 
@@ -40,16 +40,16 @@ func setup(game_config: ConfigFile):
 		$PopupDialogInfo/VC/TitleSection/HC/HighScore.visible = false
 
 	_label_title.text = game_name
-	_label_description.text = game_description
+	_label_description.bbcode_text = game_description
 	_label_playtime.text = playtime_number
 	_label_playtime_unit.text = playtime_unit
 
 	_popup_label_title.text = game_name
-	_popup_label_description.text = game_description
+	_popup_label_description.bbcode_text = game_description
 	_popup_label_author.text = game_config.get_value("game", "creator")
 	_popup_label_version.text = game_config.get_value("game", "version")
-	_popup_label_playtime.text = playtime_number
-	_popup_label_playtime_unit.text = playtime_unit
+	_popup_playtime.text = playtime_number
+	_popup_playtime_unit.text = playtime_unit
 
 	var icon_file_name = game_config.get_value("game", "icon")
 	var icon_path = GameManager.make_game_file_path(game_id, icon_file_name)
