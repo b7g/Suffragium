@@ -120,6 +120,10 @@ func _sort_alphabetically_by_game_title(a: Dictionary, b: Dictionary) -> bool:
 
 
 func _sort_by_last_played(a: Dictionary, b: Dictionary) -> bool:
+	if a["last_played"] == null:
+		return false
+	if b["last_played"] == null:
+		return true
 	if a["last_played"] > b["last_played"]:
 		return true
 	return false
