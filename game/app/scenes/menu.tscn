@@ -1,18 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://app/scenes/About.gd" type="Script" id=1]
 [ext_resource path="res://app/images/suffragium_badge_36.png" type="Texture" id=2]
-[ext_resource path="res://shared/fonts/roboto/roboto_regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://app/style/main_theme.tres" type="Theme" id=3]
 [ext_resource path="res://app/scenes/aboutpage_title_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://app/scenes/menu.gd" type="Script" id=5]
 [ext_resource path="res://shared/fonts/roboto/roboto_black.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://app/scenes/settings.gd" type="Script" id=7]
-
-[sub_resource type="DynamicFont" id=10]
-font_data = ExtResource( 3 )
-
-[sub_resource type="Theme" id=11]
-default_font = SubResource( 10 )
 
 [sub_resource type="StyleBoxEmpty" id=19]
 
@@ -48,30 +42,30 @@ texture = ExtResource( 2 )
 
 [node name="ButtonGames" type="Button" parent="MenuBar/VC"]
 margin_left = 40.0
-margin_right = 123.0
+margin_right = 135.0
 margin_bottom = 36.0
 text = "T_GAMES"
 
 [node name="ButtonAbout" type="Button" parent="MenuBar/VC"]
-margin_left = 127.0
-margin_right = 311.0
+margin_left = 139.0
+margin_right = 335.0
 margin_bottom = 36.0
 text = "T_ABOUT_SUFFRAGIUM"
 
 [node name="ButtonParticipate" type="Button" parent="MenuBar/VC"]
-margin_left = 315.0
-margin_right = 441.0
+margin_left = 339.0
+margin_right = 477.0
 margin_bottom = 36.0
 text = "T_PARTICIPATE"
 
 [node name="ButtonReportBug" type="Button" parent="MenuBar/VC"]
-margin_left = 445.0
-margin_right = 589.0
+margin_left = 481.0
+margin_right = 637.0
 margin_bottom = 36.0
 text = "T_REPORT_A_BUG"
 
 [node name="ButtonSettings" type="Button" parent="MenuBar/VC"]
-margin_left = 904.0
+margin_left = 892.0
 margin_right = 1008.0
 margin_bottom = 36.0
 size_flags_horizontal = 10
@@ -95,22 +89,22 @@ custom_constants/separation = 16
 
 [node name="Toolbar" type="HBoxContainer" parent="TabContainer/Games"]
 margin_right = 1024.0
-margin_bottom = 25.0
+margin_bottom = 35.0
 size_flags_vertical = 0
 alignment = 2
 
 [node name="Label" type="Label" parent="TabContainer/Games/Toolbar"]
-margin_right = 774.0
-margin_bottom = 25.0
+margin_right = 761.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "T_GAMES"
 valign = 1
 
 [node name="Label2" type="Label" parent="TabContainer/Games/Toolbar"]
-margin_left = 778.0
-margin_right = 862.0
-margin_bottom = 25.0
+margin_left = 765.0
+margin_right = 849.0
+margin_bottom = 35.0
 size_flags_vertical = 1
 text = "T_SORTING"
 valign = 1
@@ -119,15 +113,15 @@ __meta__ = {
 }
 
 [node name="OptionButtonSorting" type="OptionButton" parent="TabContainer/Games/Toolbar"]
-margin_left = 866.0
+margin_left = 853.0
 margin_right = 1024.0
-margin_bottom = 25.0
+margin_bottom = 35.0
 text = "T_ALPHABETICAL"
 items = [ "T_LONGST_PLAYTIME", null, false, 0, null, "T_ALPHABETICAL", null, false, 1, null, "T_LAST_PLAYED", null, false, 2, null ]
 selected = 1
 
 [node name="SC" type="ScrollContainer" parent="TabContainer/Games"]
-margin_top = 41.0
+margin_top = 51.0
 margin_right = 1024.0
 margin_bottom = 548.0
 size_flags_vertical = 3
@@ -163,7 +157,7 @@ T_PARTICIPATE_POSSIBILITIES_4
 
 T_PARTICIPATE_GUIDES
 [url=\"https://github.com/letsgamedev/Suffragium/blob/main/CONTRIBUTING.md#contributing-to-suffragium\"]Contributing to Suffragium [/url]
-[url=https://github.com/letsgamedev/Suffragium/blob/main/game/games/testgame/README.md]Howtoaddagame [/url]
+[url=https://github.com/letsgamedev/Suffragium/blob/main/game/games/testgame/README.md]How to add a game [/url]
 T_ABOUT_SUFFRAGIUM
 
 T_REPORT_A_BUG
@@ -204,8 +198,8 @@ T_PARTICIPATE_POSSIBILITIES_3
 T_PARTICIPATE_POSSIBILITIES_4
 
 T_PARTICIPATE_GUIDES
-ContributingtoSuffragium
-Howtoaddagame
+Contributing to Suffragium
+How to add a game
 T_ABOUT_SUFFRAGIUM
 
 T_REPORT_A_BUG
@@ -213,7 +207,8 @@ T_PARTICIPATE_PLEASE_NOTE_1
 T_PARTICIPATE_PLEASE_NOTE_2
 T_PARTICIPATE_PLEASE_NOTE_3
 T_REPORT_A_BUG_1
-[url=https://github.com/letsgamedev/Suffragium/issues/new/choose]Create an issue on Github[/url]"
+Create an issue on Github
+"
 scroll_active = false
 
 [node name="Settings" type="ScrollContainer" parent="TabContainer"]
@@ -224,12 +219,12 @@ script = ExtResource( 7 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Settings"]
 margin_right = 1024.0
-margin_bottom = 158.0
+margin_bottom = 170.0
 size_flags_horizontal = 3
 
 [node name="VC" type="VBoxContainer" parent="TabContainer/Settings/MC"]
 margin_right = 1024.0
-margin_bottom = 158.0
+margin_bottom = 170.0
 
 [node name="Label" type="Label" parent="TabContainer/Settings/MC/VC"]
 margin_right = 1024.0
