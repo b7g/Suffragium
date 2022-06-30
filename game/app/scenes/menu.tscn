@@ -23,7 +23,7 @@ font_data = ExtResource( 6 )
 [node name="Menu" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 11 )
+theme = ExtResource( 3 )
 custom_constants/separation = 0
 script = ExtResource( 5 )
 
@@ -279,14 +279,14 @@ margin_bottom = 70.0
 [node name="Label" type="Label" parent="TabContainer/Settings/MC/VC/VC/Language"]
 margin_top = 3.0
 margin_right = 148.0
-margin_bottom = 22.0
+margin_bottom = 27.0
 size_flags_horizontal = 3
 text = "T_LANGUAGE"
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Settings/MC/VC/VC/Language"]
 margin_left = 152.0
 margin_right = 300.0
-margin_bottom = 25.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -307,8 +307,8 @@ text = "T_SMOOTH_SCROLLING"
 [node name="CheckBox" type="CheckBox" parent="TabContainer/Settings/MC/VC/VC/SmoothScroll"]
 margin_left = 180.0
 margin_right = 300.0
-margin_bottom = 27.0
-size_flags_horizontal = 3
+margin_bottom = 19.0
+flat = true
 
 [connection signal="pressed" from="MenuBar/VC/ButtonGames" to="." method="_on_ButtonGames_pressed"]
 [connection signal="pressed" from="MenuBar/VC/ButtonAbout" to="." method="_on_ButtonAbout_pressed"]
