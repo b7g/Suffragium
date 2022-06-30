@@ -163,9 +163,9 @@ text = "T_PLAY"
 
 [node name="PopupDialogInfo" type="PopupDialog" parent="."]
 visible = true
-margin_left = 500.0
+margin_left = 12.0
 margin_top = 5.0
-margin_right = 820.0
+margin_right = 332.0
 margin_bottom = 206.0
 rect_min_size = Vector2( 320, 0 )
 custom_styles/panel = SubResource( 12 )
@@ -251,6 +251,28 @@ __meta__ = {
 [node name="LabelPlaytimeUnit" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title/HC"]
 margin_left = 125.0
 margin_right = 203.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 11 )
+text = "<time unit>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPlaytimeNumber2" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title/HC"]
+visible = false
+margin_left = 207.0
+margin_right = 231.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 11 )
+text = "<x>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPlaytimeUnit2" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title/HC"]
+visible = false
+margin_left = 207.0
+margin_right = 285.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 11 )
 text = "<time unit>"

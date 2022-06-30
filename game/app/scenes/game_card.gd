@@ -17,11 +17,11 @@ onready var _popup_icon_rect := $PopupDialogInfo/VC/TitleSection/HC/TextureRectI
 onready var _popup_label_author := $PopupDialogInfo/VC/InfoSection/HC/VC/LabelAuthor
 onready var _popup_label_version := $PopupDialogInfo/VC/InfoSection/HC/VC/LabelVersion
 onready var _popup_playtime := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeNumber
+onready var _popup_playtime_2 := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeNumber2
 onready var _popup_playtime_unit := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeUnit
+onready var _popup_playtime_unit_2 := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeUnit2
 onready var _popup_label_highscore := $PopupDialogInfo/VC/TitleSection/HC/HighScore/LabelHighscore
 
-onready var _popup_label_playtime_2 := $PopupDialogInfo/VC/PC/MC/HC/MC/VC/HC/LabelPlaytimeNumber2
-onready var _popup_label_playtime_unit_2 := $PopupDialogInfo/VC/PC/MC/HC/MC/VC/HC/LabelPlaytimeUnit2
 
 
 func setup(game_config: ConfigFile):
@@ -38,11 +38,11 @@ func setup(game_config: ConfigFile):
 	var playtime_unit = playtime_dict["unit"]
 
 	if playtime_dict.has("another_number"):
-		_popup_label_playtime_2.visible = true
-		_popup_label_playtime_2.text = playtime_dict["another_number"]
+		_popup_playtime_2.visible = true
+		_popup_playtime_2.text = playtime_dict["another_number"]
 	if playtime_dict.has("another_unit"):
-		_popup_label_playtime_unit_2.visible = true
-		_popup_label_playtime_unit_2.text = playtime_dict["another_unit"]
+		_popup_playtime_unit_2.visible = true
+		_popup_playtime_unit_2.text = playtime_dict["another_unit"]
 
 	var highscore_dict = GameManager.get_highscore(game_id)
 	if highscore_dict.has("score"):
