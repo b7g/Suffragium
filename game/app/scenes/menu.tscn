@@ -168,14 +168,14 @@ title_font = ExtResource( 4 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/About"]
 margin_right = 1024.0
-margin_bottom = 1015.0
+margin_bottom = 539.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/About/MC"]
 margin_left = 15.0
 margin_right = 1009.0
-margin_bottom = 1000.0
-rect_min_size = Vector2( 0, 1000 )
+margin_bottom = 524.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
@@ -208,6 +208,7 @@ T_PARTICIPATE_PLEASE_NOTE_3
 T_REPORT_A_BUG_1
 Create an issue on Github
 "
+fit_content_height = true
 scroll_active = false
 
 [node name="Settings" type="ScrollContainer" parent="TabContainer"]
