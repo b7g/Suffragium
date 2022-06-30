@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://app/scenes/game_card.gd" type="Script" id=1]
 [ext_resource path="res://shared/fonts/roboto/roboto_regular.ttf" type="DynamicFontData" id=2]
@@ -13,9 +13,6 @@
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=9]
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=12]
@@ -46,18 +43,41 @@ border_color = Color( 0.266667, 0.266667, 0.266667, 1 )
 [sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.164706, 0.164706, 0.164706, 1 )
 
-[node name="GameCard" type="ColorRect"]
-margin_right = 320.0
-margin_bottom = 180.0
+[node name="GameCard" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -680.0
+margin_bottom = -389.0
+rect_min_size = Vector2( 320, 180 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 7 )
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 12
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 332.0
+margin_bottom = 199.0
+
+[node name="GameCard" type="ColorRect" parent="."]
+visible = false
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 332.0
+margin_bottom = 199.0
 rect_min_size = Vector2( 320, 187 )
 theme = ExtResource( 7 )
 color = Color( 0.2, 0.2, 0.2, 1 )
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackgroundImage" type="TextureRect" parent="."]
+[node name="BackgroundImage" type="TextureRect" parent="GameCard"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -66,7 +86,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackgroundOverlay" type="ColorRect" parent="."]
+[node name="BackgroundOverlay" type="ColorRect" parent="GameCard"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -75,27 +95,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MC" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 12
-custom_constants/margin_top = 12
-custom_constants/margin_left = 12
-custom_constants/margin_bottom = 12
-
-[node name="VC" type="VBoxContainer" parent="MC"]
+[node name="Card" type="VBoxContainer" parent="."]
 margin_left = 12.0
 margin_top = 12.0
-margin_right = 308.0
-margin_bottom = 175.0
+margin_right = 332.0
+margin_bottom = 199.0
 rect_min_size = Vector2( 296, 0 )
 
-[node name="HC" type="HBoxContainer" parent="MC/VC"]
-margin_right = 296.0
+[node name="TitleSection" type="HBoxContainer" parent="Card"]
+margin_right = 320.0
 margin_bottom = 64.0
 custom_constants/separation = 10
 
-[node name="TextureRectIcon" type="TextureRect" parent="MC/VC/HC"]
+[node name="icon" type="TextureRect" parent="Card/TitleSection"]
 margin_right = 64.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
@@ -105,40 +117,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VC" type="VBoxContainer" parent="MC/VC/HC"]
+[node name="VC" type="VBoxContainer" parent="Card/TitleSection"]
 margin_left = 74.0
-margin_right = 277.0
+margin_right = 320.0
 margin_bottom = 64.0
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MC" type="MarginContainer" parent="MC/VC/HC/VC"]
-margin_right = 203.0
-margin_bottom = 31.0
-custom_constants/margin_top = 10
-custom_constants/margin_bottom = 2
-
-[node name="LabelTitle" type="Label" parent="MC/VC/HC/VC/MC"]
-margin_top = 10.0
-margin_right = 203.0
-margin_bottom = 29.0
+[node name="LabelTitle" type="Label" parent="Card/TitleSection/VC"]
+margin_right = 246.0
+margin_bottom = 41.0
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 text = "<game title>"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HC" type="HBoxContainer" parent="MC/VC/HC/VC"]
-margin_top = 35.0
-margin_right = 203.0
-margin_bottom = 54.0
+[node name="HC" type="HBoxContainer" parent="Card/TitleSection/VC"]
+margin_top = 45.0
+margin_right = 246.0
+margin_bottom = 64.0
 custom_constants/separation = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="MC/VC/HC/VC/HC"]
+[node name="Label" type="Label" parent="Card/TitleSection/VC/HC"]
 margin_right = 93.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 9 )
@@ -147,7 +155,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelPlaytimeNumber" type="Label" parent="MC/VC/HC/VC/HC"]
+[node name="LabelPlaytimeNumber" type="Label" parent="Card/TitleSection/VC/HC"]
 margin_left = 97.0
 margin_right = 121.0
 margin_bottom = 19.0
@@ -157,7 +165,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelPlaytimeUnit" type="Label" parent="MC/VC/HC/VC/HC"]
+[node name="LabelPlaytimeUnit" type="Label" parent="Card/TitleSection/VC/HC"]
 margin_left = 125.0
 margin_right = 203.0
 margin_bottom = 19.0
@@ -167,172 +175,109 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="MC/VC"]
+[node name="Description" type="RichTextLabel" parent="Card"]
 margin_top = 68.0
-margin_right = 296.0
-margin_bottom = 70.0
-custom_constants/margin_top = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SC" type="ScrollContainer" parent="MC/VC"]
-margin_top = 74.0
-margin_right = 296.0
-margin_bottom = 118.0
-rect_min_size = Vector2( 0, 44 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MC" type="MarginContainer" parent="MC/VC/SC"]
-margin_right = 296.0
-margin_bottom = 19.0
-size_flags_horizontal = 3
-custom_constants/margin_right = 4
-
-[node name="LabelDescription" type="Label" parent="MC/VC/SC/MC"]
-margin_right = 292.0
-margin_bottom = 19.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
-text = "<description>"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer2" type="MarginContainer" parent="MC/VC"]
-margin_top = 122.0
-margin_right = 296.0
-margin_bottom = 124.0
-custom_constants/margin_top = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HC2" type="HBoxContainer" parent="MC/VC"]
-margin_top = 128.0
-margin_right = 296.0
-margin_bottom = 163.0
+margin_right = 320.0
+margin_bottom = 148.0
 size_flags_vertical = 3
+
+[node name="ButtonSection" type="HBoxContainer" parent="Card"]
+margin_top = 152.0
+margin_right = 320.0
+margin_bottom = 187.0
 alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonInfo" type="Button" parent="MC/VC/HC2"]
-margin_left = 136.0
-margin_right = 212.0
+[node name="ButtonInfo" type="Button" parent="Card/ButtonSection"]
+margin_left = 160.0
+margin_right = 236.0
 margin_bottom = 35.0
 text = "T_INFO"
 
-[node name="ButtonPlay" type="Button" parent="MC/VC/HC2"]
-margin_left = 216.0
-margin_right = 296.0
+[node name="ButtonPlay" type="Button" parent="Card/ButtonSection"]
+margin_left = 240.0
+margin_right = 320.0
 margin_bottom = 35.0
 text = "T_PLAY"
 
 [node name="PopupDialogInfo" type="PopupDialog" parent="."]
 visible = true
-margin_left = 347.0
-margin_top = 100.0
-margin_right = 997.0
-margin_bottom = 500.0
+margin_left = 500.0
+margin_top = 12.0
+margin_right = 820.0
+margin_bottom = 199.0
+rect_min_size = Vector2( 320, 0 )
 custom_styles/panel = SubResource( 12 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
 [node name="VC" type="VBoxContainer" parent="PopupDialogInfo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_min_size = Vector2( 500, 300 )
 custom_constants/separation = 0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="PC" type="PanelContainer" parent="PopupDialogInfo/VC"]
-margin_right = 650.0
-margin_bottom = 96.0
+[node name="TitleSection" type="PanelContainer" parent="PopupDialogInfo/VC"]
+margin_right = 500.0
+margin_bottom = 64.0
 custom_styles/panel = SubResource( 18 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="BlurShader" type="ColorRect" parent="PopupDialogInfo/VC/PC"]
+[node name="BlurShader" type="ColorRect" parent="PopupDialogInfo/VC/TitleSection"]
 material = SubResource( 20 )
-margin_right = 650.0
-margin_bottom = 96.0
+margin_right = 500.0
+margin_bottom = 64.0
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MC" type="MarginContainer" parent="PopupDialogInfo/VC/PC"]
-margin_right = 650.0
-margin_bottom = 96.0
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/PC/MC"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 634.0
-margin_bottom = 80.0
+[node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/TitleSection"]
+margin_right = 500.0
+margin_bottom = 64.0
 custom_constants/separation = 0
+alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRectIcon" type="TextureRect" parent="PopupDialogInfo/VC/PC/MC/HC"]
+[node name="TextureRectIcon" type="TextureRect" parent="PopupDialogInfo/VC/TitleSection/HC"]
 margin_right = 64.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 texture = ExtResource( 3 )
 expand = true
 
-[node name="MC" type="MarginContainer" parent="PopupDialogInfo/VC/PC/MC/HC"]
+[node name="Title" type="VBoxContainer" parent="PopupDialogInfo/VC/TitleSection/HC"]
 margin_left = 64.0
-margin_right = 277.0
+margin_right = 354.0
 margin_bottom = 64.0
-custom_constants/margin_left = 10
+size_flags_horizontal = 3
 
-[node name="VC" type="VBoxContainer" parent="PopupDialogInfo/VC/PC/MC/HC/MC"]
-margin_left = 10.0
-margin_right = 213.0
-margin_bottom = 64.0
-
-[node name="MC" type="MarginContainer" parent="PopupDialogInfo/VC/PC/MC/HC/MC/VC"]
-margin_right = 203.0
-margin_bottom = 31.0
-custom_constants/margin_top = 10
-custom_constants/margin_bottom = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LabelTitle" type="Label" parent="PopupDialogInfo/VC/PC/MC/HC/MC/VC/MC"]
-margin_top = 10.0
-margin_right = 203.0
-margin_bottom = 29.0
+[node name="LabelTitle" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title"]
+margin_right = 290.0
+margin_bottom = 41.0
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 10 )
 text = "<game title>"
+valign = 1
 
-[node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/PC/MC/HC/MC/VC"]
-margin_top = 35.0
-margin_right = 203.0
-margin_bottom = 54.0
+[node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/TitleSection/HC/Title"]
+margin_top = 45.0
+margin_right = 290.0
+margin_bottom = 64.0
 custom_constants/separation = 4
 
-[node name="Label" type="Label" parent="PopupDialogInfo/VC/PC/MC/HC/MC/VC/HC"]
+[node name="Label" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title/HC"]
 margin_right = 93.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 11 )
@@ -341,7 +286,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelPlaytimeNumber" type="Label" parent="PopupDialogInfo/VC/PC/MC/HC/MC/VC/HC"]
+[node name="LabelPlaytimeNumber" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title/HC"]
 margin_left = 97.0
 margin_right = 121.0
 margin_bottom = 19.0
@@ -351,7 +296,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelPlaytimeUnit" type="Label" parent="PopupDialogInfo/VC/PC/MC/HC/MC/VC/HC"]
+[node name="LabelPlaytimeUnit" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title/HC"]
 margin_left = 125.0
 margin_right = 203.0
 margin_bottom = 19.0
@@ -361,19 +306,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VC" type="VBoxContainer" parent="PopupDialogInfo/VC/PC/MC/HC"]
-margin_left = 277.0
-margin_right = 576.0
+[node name="HighScore" type="VBoxContainer" parent="PopupDialogInfo/VC/TitleSection/HC"]
+margin_left = 354.0
+margin_right = 458.0
 margin_bottom = 64.0
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PopupDialogInfo/VC/PC/MC/HC/VC"]
+[node name="Label" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/HighScore"]
 margin_top = 11.0
-margin_right = 299.0
+margin_right = 104.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 11 )
@@ -383,9 +328,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelHighscore" type="Label" parent="PopupDialogInfo/VC/PC/MC/HC/VC"]
+[node name="LabelHighscore" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/HighScore"]
 margin_top = 34.0
-margin_right = 299.0
+margin_right = 104.0
 margin_bottom = 53.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 11 )
@@ -395,96 +340,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VC2" type="VBoxContainer" parent="PopupDialogInfo/VC/PC/MC/HC"]
-margin_left = 576.0
-margin_right = 618.0
-margin_bottom = 64.0
-
-[node name="ButtonClosePopup" type="Button" parent="PopupDialogInfo/VC/PC/MC/HC/VC2"]
-margin_right = 42.0
+[node name="ButtonClosePopup" type="Button" parent="PopupDialogInfo/VC/TitleSection/HC"]
+margin_left = 458.0
+margin_right = 500.0
 margin_bottom = 42.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme = ExtResource( 8 )
 icon = ExtResource( 5 )
 
-[node name="PC2" type="PanelContainer" parent="PopupDialogInfo/VC"]
-margin_top = 96.0
-margin_right = 650.0
-margin_bottom = 333.0
+[node name="InfoSection" type="PanelContainer" parent="PopupDialogInfo/VC"]
+margin_top = 64.0
+margin_right = 500.0
+margin_bottom = 265.0
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MC" type="MarginContainer" parent="PopupDialogInfo/VC/PC2"]
-margin_right = 650.0
-margin_bottom = 237.0
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
-
-[node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/PC2/MC"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 634.0
-margin_bottom = 221.0
+[node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/InfoSection"]
+margin_right = 500.0
+margin_bottom = 201.0
 custom_constants/separation = 16
 
-[node name="SC" type="ScrollContainer" parent="PopupDialogInfo/VC/PC2/MC/HC"]
-margin_right = 388.0
-margin_bottom = 205.0
+[node name="Description" type="RichTextLabel" parent="PopupDialogInfo/VC/InfoSection/HC"]
+margin_right = 382.0
+margin_bottom = 201.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
 
-[node name="MC" type="MarginContainer" parent="PopupDialogInfo/VC/PC2/MC/HC/SC"]
-margin_right = 388.0
-margin_bottom = 19.0
-size_flags_horizontal = 3
-custom_constants/margin_right = 4
-
-[node name="VC" type="VBoxContainer" parent="PopupDialogInfo/VC/PC2/MC/HC/SC/MC"]
-margin_right = 384.0
-margin_bottom = 19.0
-
-[node name="LabelDescription" type="Label" parent="PopupDialogInfo/VC/PC2/MC/HC/SC/MC/VC"]
-margin_right = 384.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 11 )
-text = "<description>"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VSeparator" type="VSeparator" parent="PopupDialogInfo/VC/PC2/MC/HC"]
-margin_left = 404.0
-margin_right = 408.0
-margin_bottom = 205.0
+[node name="VSeparator" type="VSeparator" parent="PopupDialogInfo/VC/InfoSection/HC"]
+margin_left = 398.0
+margin_right = 402.0
+margin_bottom = 201.0
 custom_styles/separator = SubResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VC" type="VBoxContainer" parent="PopupDialogInfo/VC/PC2/MC/HC"]
-margin_left = 424.0
-margin_right = 618.0
-margin_bottom = 205.0
-size_flags_horizontal = 3
+[node name="VC" type="VBoxContainer" parent="PopupDialogInfo/VC/InfoSection/HC"]
+margin_left = 418.0
+margin_right = 500.0
+margin_bottom = 201.0
+alignment = 1
 
-[node name="Label" type="Label" parent="PopupDialogInfo/VC/PC2/MC/HC/VC"]
-margin_right = 194.0
-margin_bottom = 19.0
+[node name="Label" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
+margin_top = 52.0
+margin_right = 82.0
+margin_bottom = 71.0
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
 text = "T_AUTHOR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelAuthor" type="Label" parent="PopupDialogInfo/VC/PC2/MC/HC/VC"]
-margin_top = 23.0
-margin_right = 194.0
-margin_bottom = 42.0
+[node name="LabelAuthor" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
+margin_top = 75.0
+margin_right = 82.0
+margin_bottom = 94.0
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
 text = "<author>"
 align = 1
@@ -492,29 +407,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="PopupDialogInfo/VC/PC2/MC/HC/VC"]
-margin_top = 46.0
-margin_right = 194.0
-margin_bottom = 54.0
-custom_constants/margin_top = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Control" type="Control" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
+margin_top = 98.0
+margin_right = 82.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 0, 5 )
 
-[node name="Label2" type="Label" parent="PopupDialogInfo/VC/PC2/MC/HC/VC"]
-margin_top = 58.0
-margin_right = 194.0
-margin_bottom = 77.0
+[node name="Label2" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
+margin_top = 107.0
+margin_right = 82.0
+margin_bottom = 126.0
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
 text = "T_VERSION"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelVersion" type="Label" parent="PopupDialogInfo/VC/PC2/MC/HC/VC"]
-margin_top = 81.0
-margin_right = 194.0
-margin_bottom = 100.0
+[node name="LabelVersion" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
+margin_top = 130.0
+margin_right = 82.0
+margin_bottom = 149.0
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
 text = "<version>"
 align = 1
@@ -523,34 +437,20 @@ __meta__ = {
 }
 
 [node name="PC3" type="PanelContainer" parent="PopupDialogInfo/VC"]
-margin_top = 333.0
-margin_right = 650.0
-margin_bottom = 400.0
+margin_top = 265.0
+margin_right = 500.0
+margin_bottom = 300.0
 custom_styles/panel = SubResource( 17 )
 
-[node name="MC" type="MarginContainer" parent="PopupDialogInfo/VC/PC3"]
-margin_right = 650.0
-margin_bottom = 67.0
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
-
-[node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/PC3/MC"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 634.0
-margin_bottom = 51.0
-rect_min_size = Vector2( 0, 28 )
-alignment = 2
-
-[node name="ButtonPlay" type="Button" parent="PopupDialogInfo/VC/PC3/MC/HC"]
-margin_left = 538.0
-margin_right = 618.0
+[node name="ButtonPlay" type="Button" parent="PopupDialogInfo/VC/PC3"]
+margin_left = 420.0
+margin_right = 500.0
 margin_bottom = 35.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
 text = "T_PLAY"
 
-[connection signal="pressed" from="MC/VC/HC2/ButtonInfo" to="." method="_on_ButtonInfo_pressed"]
-[connection signal="pressed" from="MC/VC/HC2/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
-[connection signal="pressed" from="PopupDialogInfo/VC/PC/MC/HC/VC2/ButtonClosePopup" to="." method="_on_ButtonClosePopup_pressed"]
-[connection signal="pressed" from="PopupDialogInfo/VC/PC3/MC/HC/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
+[connection signal="pressed" from="Card/ButtonSection/ButtonInfo" to="." method="_on_ButtonInfo_pressed"]
+[connection signal="pressed" from="Card/ButtonSection/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
+[connection signal="pressed" from="PopupDialogInfo/VC/TitleSection/HC/ButtonClosePopup" to="." method="_on_ButtonClosePopup_pressed"]
+[connection signal="pressed" from="PopupDialogInfo/VC/PC3/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]

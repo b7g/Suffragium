@@ -1,23 +1,23 @@
-extends ColorRect
+extends MarginContainer
 
 var _game_config: ConfigFile = null
 var _playtime: float = 0
 var _last_played = -1
 
-onready var _label_title := $MC/VC/HC/VC/MC/LabelTitle
-onready var _label_description := $MC/VC/SC/MC/LabelDescription
-onready var _texture_icon_rect := $MC/VC/HC/TextureRectIcon
-onready var _label_playtime := $MC/VC/HC/VC/HC/LabelPlaytimeNumber
-onready var _label_playtime_unit := $MC/VC/HC/VC/HC/LabelPlaytimeUnit
+onready var _label_title := $Card/TitleSection/VC/LabelTitle
+onready var _label_description := $Card/Description
+onready var _texture_icon_rect := $Card/TitleSection/icon
+onready var _label_playtime := $Card/TitleSection/VC/HC/LabelPlaytimeNumber
+onready var _label_playtime_unit := $Card/TitleSection/VC/HC/LabelPlaytimeUnit
 
-onready var _popup_label_title := $PopupDialogInfo/VC/PC/MC/HC/MC/VC/MC/LabelTitle
-onready var _popup_label_description := $PopupDialogInfo/VC/PC2/MC/HC/SC/MC/VC/LabelDescription
-onready var _popup_icon_rect := $PopupDialogInfo/VC/PC/MC/HC/TextureRectIcon
-onready var _popup_label_author := $PopupDialogInfo/VC/PC2/MC/HC/VC/LabelAuthor
-onready var _popup_label_version := $PopupDialogInfo/VC/PC2/MC/HC/VC/LabelVersion
-onready var _popup_label_playtime := $PopupDialogInfo/VC/PC/MC/HC/MC/VC/HC/LabelPlaytimeNumber
-onready var _popup_label_playtime_unit := $PopupDialogInfo/VC/PC/MC/HC/MC/VC/HC/LabelPlaytimeUnit
-onready var _popup_label_highscore := $PopupDialogInfo/VC/PC/MC/HC/VC/LabelHighscore
+onready var _popup_label_title := $PopupDialogInfo/VC/TitleSection/HC/Title/LabelTitle
+onready var _popup_label_description := $PopupDialogInfo/VC/InfoSection/HC/Description
+onready var _popup_icon_rect := $PopupDialogInfo/VC/TitleSection/HC/TextureRectIcon
+onready var _popup_label_author := $PopupDialogInfo/VC/InfoSection/HC/VC/LabelAuthor
+onready var _popup_label_version := $PopupDialogInfo/VC/InfoSection/HC/VC/LabelVersion
+onready var _popup_label_playtime := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeNumber
+onready var _popup_label_playtime_unit := $PopupDialogInfo/VC/TitleSection/HC/Title/HC/LabelPlaytimeUnit
+onready var _popup_label_highscore := $PopupDialogInfo/VC/TitleSection/HC/HighScore/LabelHighscore
 
 
 func setup(game_config: ConfigFile):
@@ -37,8 +37,7 @@ func setup(game_config: ConfigFile):
 	if highscore_dict.has("score"):
 		_popup_label_highscore.text = str(highscore_dict["score"])
 	else:
-		$PopupDialogInfo/VC/PC/MC/HC/VC/Label.visible = false
-		$PopupDialogInfo/VC/PC/MC/HC/VC/LabelHighscore.visible = false
+		$PopupDialogInfo/VC/TitleSection/HC/HighScore.visible = false
 
 	_label_title.text = game_name
 	_label_description.text = game_description
@@ -93,7 +92,7 @@ func _format_playtime(playtime) -> Dictionary:
 
 
 func _on_ButtonInfo_pressed():
-	$PopupDialogInfo.popup_centered()
+	$PopupDialogInfo.popup_centered($PopupDialogInfo/VC.rect_size)
 
 
 func _on_ButtonPlay_pressed():
