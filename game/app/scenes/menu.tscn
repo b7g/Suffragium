@@ -83,17 +83,16 @@ anchor_bottom = 1.0
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Games"]
 margin_right = 1024.0
-margin_bottom = 51.0
+margin_bottom = 56.0
 
 [node name="Toolbar" type="HBoxContainer" parent="TabContainer/Games/MC"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 1019.0
-margin_bottom = 46.0
+margin_left = 15.0
+margin_right = 1009.0
+margin_bottom = 41.0
 alignment = 2
 
 [node name="Label" type="Label" parent="TabContainer/Games/MC/Toolbar"]
-margin_right = 751.0
+margin_right = 731.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -102,8 +101,8 @@ text = "T_GAMES"
 valign = 1
 
 [node name="Label2" type="Label" parent="TabContainer/Games/MC/Toolbar"]
-margin_left = 755.0
-margin_right = 839.0
+margin_left = 735.0
+margin_right = 819.0
 margin_bottom = 41.0
 size_flags_vertical = 1
 text = "T_SORTING"
@@ -113,28 +112,26 @@ __meta__ = {
 }
 
 [node name="OptionButtonSorting" type="OptionButton" parent="TabContainer/Games/MC/Toolbar"]
-margin_left = 843.0
-margin_right = 1014.0
+margin_left = 823.0
+margin_right = 994.0
 margin_bottom = 41.0
 text = "T_ALPHABETICAL"
 items = [ "T_LONGST_PLAYTIME", null, false, 0, null, "T_ALPHABETICAL", null, false, 1, null, "T_LAST_PLAYED", null, false, 2, null ]
 selected = 1
 
 [node name="SC" type="ScrollContainer" parent="TabContainer/Games"]
-margin_top = 55.0
+margin_top = 60.0
 margin_right = 1024.0
 margin_bottom = 548.0
 size_flags_vertical = 3
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Games/SC"]
-margin_right = 10.0
-margin_bottom = 10.0
+margin_right = 30.0
+margin_bottom = 15.0
 
 [node name="GC" type="GridContainer" parent="TabContainer/Games/SC/MC"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 5.0
-margin_bottom = 5.0
+margin_left = 15.0
+margin_right = 15.0
 custom_constants/vseparation = 4
 custom_constants/hseparation = 4
 columns = 3
@@ -176,18 +173,46 @@ title_font = ExtResource( 4 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/About"]
 margin_right = 1024.0
-margin_bottom = 1010.0
+margin_bottom = 1015.0
 size_flags_horizontal = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/About/MC"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 1019.0
-margin_bottom = 1005.0
+margin_left = 15.0
+margin_right = 1009.0
+margin_bottom = 1000.0
 rect_min_size = Vector2( 0, 1000 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
+text = "T_ABOUT_SUFFRAGIUM
+T_ABOUT_SUFFRAGIUM_1
+T_ABOUT_SUFFRAGIUM_2
+
+T_PARTICIPATE
+T_PARTICIPATE_1
+
+T_PARTICIPATE_PLEASE_NOTE_1
+T_PARTICIPATE_PLEASE_NOTE_2
+T_PARTICIPATE_PLEASE_NOTE_3
+
+T_PARTICIPATE_POSSIBILITIES
+T_PARTICIPATE_POSSIBILITIES_1
+T_PARTICIPATE_POSSIBILITIES_2
+T_PARTICIPATE_POSSIBILITIES_3
+T_PARTICIPATE_POSSIBILITIES_4
+
+T_PARTICIPATE_GUIDES
+Contributing to Suffragium
+How to add a game
+T_ABOUT_SUFFRAGIUM
+
+T_REPORT_A_BUG
+T_PARTICIPATE_PLEASE_NOTE_1
+T_PARTICIPATE_PLEASE_NOTE_2
+T_PARTICIPATE_PLEASE_NOTE_3
+T_REPORT_A_BUG_1
+Create an issue on Github
+"
 scroll_active = false
 
 [node name="Settings" type="ScrollContainer" parent="TabContainer"]
@@ -198,14 +223,13 @@ script = ExtResource( 7 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Settings"]
 margin_right = 1024.0
-margin_bottom = 197.0
+margin_bottom = 212.0
 size_flags_horizontal = 3
 
 [node name="VC" type="VBoxContainer" parent="TabContainer/Settings/MC"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 1019.0
-margin_bottom = 192.0
+margin_left = 15.0
+margin_right = 1009.0
+margin_bottom = 197.0
 
 [node name="Label" type="Label" parent="TabContainer/Settings/MC/VC"]
 margin_right = 1014.0

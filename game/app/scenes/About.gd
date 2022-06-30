@@ -11,13 +11,19 @@ onready var _label := $MC/RichTextLabel
 
 func _notification(what):
 	if what == NOTIFICATION_TRANSLATION_CHANGED:
-		_write_def()
+		set_process(true)
 
 
 func set_text(val: String):
 	text = val
-	_write_to_label()
+	set_process(true)
 
+# _write_to_label() will fail if the node is outside the tree
+# to prevent this it checks every frame if it can update the text and stops the check if it can
+func _process(_delta):
+	if is_inside_tree():
+		_write_to_label()
+		set_process(false)
 
 func _write_to_label():
 	# Fails when weird stuff happens with scene transitions. Don't ask me why.
