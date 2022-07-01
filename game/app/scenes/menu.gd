@@ -6,7 +6,7 @@ var _res_game_card = preload("res://app/scenes/game_card.tscn")
 var _res_game_card_add_yours = preload("res://app/scenes/game_card_add_yours.tscn")
 
 onready var _tab_container: TabContainer = $TabContainer
-onready var _games_grid: GridContainer = $TabContainer/Games/SC/MC/GC
+onready var _games_grid: GridContainer = $TabContainer/Games/SC/MC/CC/GC
 onready var _about_tab: ScrollContainer = $TabContainer/About
 
 

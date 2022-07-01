@@ -81,19 +81,21 @@ custom_constants/separation = 0
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Games"]
 margin_right = 1024.0
-margin_bottom = 65.0
-rect_min_size = Vector2( 0, 65 )
-size_flags_vertical = 0
+margin_bottom = 51.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 0
 
 [node name="Toolbar" type="HBoxContainer" parent="TabContainer/Games/MC"]
-margin_left = 15.0
-margin_top = 15.0
-margin_right = 1009.0
-margin_bottom = 50.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 51.0
 alignment = 2
 
 [node name="Label" type="Label" parent="TabContainer/Games/MC/Toolbar"]
-margin_right = 729.0
+margin_right = 727.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -102,8 +104,8 @@ text = "T_GAMES"
 valign = 1
 
 [node name="Label2" type="Label" parent="TabContainer/Games/MC/Toolbar"]
-margin_left = 734.0
-margin_right = 818.0
+margin_left = 732.0
+margin_right = 816.0
 margin_bottom = 35.0
 size_flags_vertical = 1
 text = "T_SORTING"
@@ -113,29 +115,35 @@ __meta__ = {
 }
 
 [node name="OptionButtonSorting" type="OptionButton" parent="TabContainer/Games/MC/Toolbar"]
-margin_left = 823.0
-margin_right = 994.0
+margin_left = 821.0
+margin_right = 992.0
 margin_bottom = 35.0
-size_flags_vertical = 5
+size_flags_vertical = 4
 text = "T_ALPHABETICAL"
 items = [ "T_LONGST_PLAYTIME", null, false, 0, null, "T_ALPHABETICAL", null, false, 1, null, "T_LAST_PLAYED", null, false, 2, null ]
 selected = 1
 
 [node name="SC" type="ScrollContainer" parent="TabContainer/Games"]
-margin_top = 65.0
+margin_top = 51.0
 margin_right = 1024.0
 margin_bottom = 543.0
 size_flags_vertical = 3
 
 [node name="MC" type="MarginContainer" parent="TabContainer/Games/SC"]
-margin_right = 30.0
+margin_right = 1024.0
 margin_bottom = 30.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 0
+custom_constants/margin_left = 0
 
-[node name="GC" type="GridContainer" parent="TabContainer/Games/SC/MC"]
-margin_left = 15.0
+[node name="CC" type="CenterContainer" parent="TabContainer/Games/SC/MC"]
 margin_top = 15.0
-margin_right = 15.0
+margin_right = 1024.0
 margin_bottom = 15.0
+
+[node name="GC" type="GridContainer" parent="TabContainer/Games/SC/MC/CC"]
+margin_left = 512.0
+margin_right = 512.0
 custom_constants/vseparation = 4
 custom_constants/hseparation = 4
 columns = 3

@@ -29,7 +29,7 @@ func _process(_delta):
 
 func _write_to_label():
 	# Fails when weird stuff happens with scene transitions. Don't ask me why.
-	# Also fails in editor sometimes. 
+	# Also fails in editor sometimes.
 	# It can be savely ignored because it is called more than once!
 	if !is_instance_valid(_label):
 		return
