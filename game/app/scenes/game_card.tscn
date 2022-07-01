@@ -28,10 +28,10 @@ font_data = ExtResource( 4 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=23]
-content_margin_left = 15.0
-content_margin_right = 15.0
-content_margin_top = 5.0
-content_margin_bottom = 5.0
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
 bg_color = Color( 0.203922, 0.2, 0.2, 1 )
 
 [sub_resource type="StyleBoxFlat" id=16]
@@ -39,10 +39,10 @@ border_width_left = 1
 border_color = Color( 0.266667, 0.266667, 0.266667, 1 )
 
 [sub_resource type="StyleBoxFlat" id=21]
-content_margin_left = 5.0
-content_margin_right = 5.0
-content_margin_top = 5.0
-content_margin_bottom = 5.0
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
 bg_color = Color( 0.14902, 0.14902, 0.14902, 1 )
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
@@ -50,9 +50,9 @@ corner_radius_bottom_left = 1
 [node name="GameCard" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -680.0
-margin_bottom = -389.0
-rect_min_size = Vector2( 320, 180 )
+margin_right = -704.0
+margin_bottom = -413.0
+rect_min_size = Vector2( 320, 187 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 7 )
@@ -61,12 +61,12 @@ script = ExtResource( 1 )
 [node name="Card" type="VBoxContainer" parent="."]
 margin_left = 12.0
 margin_top = 12.0
-margin_right = 332.0
-margin_bottom = 199.0
+margin_right = 308.0
+margin_bottom = 175.0
 rect_min_size = Vector2( 296, 0 )
 
 [node name="TitleSection" type="HBoxContainer" parent="Card"]
-margin_right = 320.0
+margin_right = 296.0
 margin_bottom = 64.0
 custom_constants/separation = 10
 
@@ -82,7 +82,7 @@ __meta__ = {
 
 [node name="VC" type="VBoxContainer" parent="Card/TitleSection"]
 margin_left = 74.0
-margin_right = 320.0
+margin_right = 296.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -90,7 +90,7 @@ __meta__ = {
 }
 
 [node name="LabelTitle" type="Label" parent="Card/TitleSection/VC"]
-margin_right = 246.0
+margin_right = 222.0
 margin_bottom = 40.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
@@ -102,7 +102,7 @@ __meta__ = {
 
 [node name="HC" type="HBoxContainer" parent="Card/TitleSection/VC"]
 margin_top = 45.0
-margin_right = 246.0
+margin_right = 222.0
 margin_bottom = 64.0
 custom_constants/separation = 4
 __meta__ = {
@@ -140,37 +140,37 @@ __meta__ = {
 
 [node name="Description" type="RichTextLabel" parent="Card"]
 margin_top = 69.0
-margin_right = 320.0
-margin_bottom = 147.0
+margin_right = 296.0
+margin_bottom = 123.0
 size_flags_vertical = 3
 bbcode_enabled = true
 
 [node name="ButtonSection" type="HBoxContainer" parent="Card"]
-margin_top = 152.0
-margin_right = 320.0
-margin_bottom = 187.0
+margin_top = 128.0
+margin_right = 296.0
+margin_bottom = 163.0
 alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonInfo" type="Button" parent="Card/ButtonSection"]
-margin_left = 159.0
-margin_right = 235.0
+margin_left = 135.0
+margin_right = 211.0
 margin_bottom = 35.0
 text = "T_INFO"
 
 [node name="ButtonPlay" type="Button" parent="Card/ButtonSection"]
-margin_left = 240.0
-margin_right = 320.0
+margin_left = 216.0
+margin_right = 296.0
 margin_bottom = 35.0
 text = "T_PLAY"
 
 [node name="PopupDialogInfo" type="PopupDialog" parent="."]
 margin_left = 12.0
-margin_top = 10.0
+margin_top = 12.0
 margin_right = 662.0
-margin_bottom = 410.0
+margin_bottom = 412.0
 rect_min_size = Vector2( 650, 400 )
 custom_styles/panel = SubResource( 22 )
 __meta__ = {
@@ -190,7 +190,7 @@ __meta__ = {
 [node name="TitleSection" type="PanelContainer" parent="PopupDialogInfo/VC"]
 material = SubResource( 20 )
 margin_right = 650.0
-margin_bottom = 79.0
+margin_bottom = 88.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -198,9 +198,9 @@ __meta__ = {
 
 [node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/TitleSection"]
 margin_left = 12.0
-margin_top = 10.0
+margin_top = 12.0
 margin_right = 638.0
-margin_bottom = 74.0
+margin_bottom = 76.0
 alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -328,9 +328,9 @@ theme = ExtResource( 8 )
 icon = ExtResource( 5 )
 
 [node name="InfoSection" type="PanelContainer" parent="PopupDialogInfo/VC"]
-margin_top = 79.0
+margin_top = 88.0
 margin_right = 650.0
-margin_bottom = 355.0
+margin_bottom = 333.0
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 23 )
 __meta__ = {
@@ -341,19 +341,19 @@ __meta__ = {
 margin_left = 15.0
 margin_top = 5.0
 margin_right = 635.0
-margin_bottom = 271.0
+margin_bottom = 240.0
 custom_constants/separation = 16
 
 [node name="Description" type="RichTextLabel" parent="PopupDialogInfo/VC/InfoSection/HC"]
 margin_right = 417.0
-margin_bottom = 266.0
+margin_bottom = 235.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 
 [node name="VSeparator" type="VSeparator" parent="PopupDialogInfo/VC/InfoSection/HC"]
 margin_left = 433.0
 margin_right = 437.0
-margin_bottom = 266.0
+margin_bottom = 235.0
 custom_styles/separator = SubResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -362,7 +362,7 @@ __meta__ = {
 [node name="VC" type="VBoxContainer" parent="PopupDialogInfo/VC/InfoSection/HC"]
 margin_left = 453.0
 margin_right = 620.0
-margin_bottom = 266.0
+margin_bottom = 235.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
 
@@ -418,16 +418,16 @@ __meta__ = {
 }
 
 [node name="PC3" type="PanelContainer" parent="PopupDialogInfo/VC"]
-margin_top = 355.0
+margin_top = 333.0
 margin_right = 650.0
 margin_bottom = 400.0
 custom_styles/panel = SubResource( 21 )
 
 [node name="ButtonPlay" type="Button" parent="PopupDialogInfo/VC/PC3"]
-margin_left = 565.0
-margin_top = 5.0
-margin_right = 645.0
-margin_bottom = 40.0
+margin_left = 554.0
+margin_top = 16.0
+margin_right = 634.0
+margin_bottom = 51.0
 size_flags_horizontal = 8
 text = "T_PLAY"
 
