@@ -44,7 +44,8 @@ func _write_to_label():
 
 		for key in line.split(" "):
 			if key.match("[/*]"):
-				_label.pop()
+				for _i in range(key.count("[")):
+					_label.pop()
 			else:
 				if first:
 					_label.append_bbcode(tr(key))
