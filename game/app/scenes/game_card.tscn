@@ -32,7 +32,7 @@ content_margin_left = 16.0
 content_margin_right = 16.0
 content_margin_top = 16.0
 content_margin_bottom = 16.0
-bg_color = Color( 0.203922, 0.2, 0.2, 1 )
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
 
 [sub_resource type="StyleBoxFlat" id=16]
 border_width_left = 1
@@ -43,7 +43,7 @@ content_margin_left = 16.0
 content_margin_right = 16.0
 content_margin_top = 16.0
 content_margin_bottom = 16.0
-bg_color = Color( 0.14902, 0.14902, 0.14902, 1 )
+bg_color = Color( 0.164706, 0.164706, 0.164706, 1 )
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
@@ -64,6 +64,7 @@ margin_top = 12.0
 margin_right = 308.0
 margin_bottom = 175.0
 rect_min_size = Vector2( 296, 0 )
+custom_constants/separation = 11
 
 [node name="TitleSection" type="HBoxContainer" parent="Card"]
 margin_right = 296.0
@@ -139,9 +140,9 @@ __meta__ = {
 }
 
 [node name="Description" type="RichTextLabel" parent="Card"]
-margin_top = 69.0
+margin_top = 75.0
 margin_right = 296.0
-margin_bottom = 123.0
+margin_bottom = 117.0
 size_flags_vertical = 3
 bbcode_enabled = true
 
@@ -180,10 +181,6 @@ __meta__ = {
 [node name="VC" type="VBoxContainer" parent="PopupDialogInfo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 347.0
-margin_top = 100.0
-margin_right = 677.0
-margin_bottom = 313.0
 rect_min_size = Vector2( 650, 400 )
 custom_constants/separation = 0
 __meta__ = {
@@ -204,6 +201,7 @@ margin_left = 12.0
 margin_top = 12.0
 margin_right = 638.0
 margin_bottom = 76.0
+custom_constants/separation = 10
 alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -217,13 +215,13 @@ texture = ExtResource( 3 )
 expand = true
 
 [node name="Title" type="VBoxContainer" parent="PopupDialogInfo/VC/TitleSection/HC"]
-margin_left = 69.0
-margin_right = 470.0
+margin_left = 74.0
+margin_right = 277.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 
 [node name="LabelTitle" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title"]
-margin_right = 401.0
+margin_right = 203.0
 margin_bottom = 40.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 10 )
@@ -232,7 +230,7 @@ valign = 1
 
 [node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/TitleSection/HC/Title"]
 margin_top = 45.0
-margin_right = 401.0
+margin_right = 203.0
 margin_bottom = 64.0
 custom_constants/separation = 4
 
@@ -288,10 +286,11 @@ __meta__ = {
 }
 
 [node name="HighScore" type="VBoxContainer" parent="PopupDialogInfo/VC/TitleSection/HC"]
-margin_left = 475.0
-margin_right = 579.0
+margin_left = 287.0
+margin_right = 574.0
 margin_bottom = 64.0
-size_flags_horizontal = 8
+size_flags_horizontal = 11
+size_flags_stretch_ratio = 2.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -299,7 +298,7 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/HighScore"]
 margin_top = 10.0
-margin_right = 104.0
+margin_right = 287.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 11 )
@@ -311,7 +310,7 @@ __meta__ = {
 
 [node name="LabelHighscore" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/HighScore"]
 margin_top = 34.0
-margin_right = 104.0
+margin_right = 287.0
 margin_bottom = 53.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 11 )
@@ -341,37 +340,37 @@ __meta__ = {
 }
 
 [node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/InfoSection"]
-margin_left = 15.0
-margin_top = 5.0
-margin_right = 635.0
-margin_bottom = 240.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 634.0
+margin_bottom = 229.0
 custom_constants/separation = 16
 
 [node name="Description" type="RichTextLabel" parent="PopupDialogInfo/VC/InfoSection/HC"]
-margin_right = 417.0
-margin_bottom = 235.0
+margin_right = 484.0
+margin_bottom = 213.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 bbcode_enabled = true
 
 [node name="VSeparator" type="VSeparator" parent="PopupDialogInfo/VC/InfoSection/HC"]
-margin_left = 433.0
-margin_right = 437.0
-margin_bottom = 235.0
+margin_left = 500.0
+margin_right = 504.0
+margin_bottom = 213.0
 custom_styles/separator = SubResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VC" type="VBoxContainer" parent="PopupDialogInfo/VC/InfoSection/HC"]
-margin_left = 453.0
-margin_right = 620.0
-margin_bottom = 235.0
+margin_left = 520.0
+margin_right = 618.0
+margin_bottom = 213.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
 
 [node name="Label" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
-margin_right = 167.0
+margin_right = 98.0
 margin_bottom = 19.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
@@ -382,7 +381,7 @@ __meta__ = {
 
 [node name="LabelAuthor" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
 margin_top = 24.0
-margin_right = 167.0
+margin_right = 98.0
 margin_bottom = 43.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
@@ -394,13 +393,13 @@ __meta__ = {
 
 [node name="Control" type="Control" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
 margin_top = 48.0
-margin_right = 167.0
+margin_right = 98.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="Label2" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
 margin_top = 58.0
-margin_right = 167.0
+margin_right = 98.0
 margin_bottom = 77.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
@@ -411,7 +410,7 @@ __meta__ = {
 
 [node name="LabelVersion" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
 margin_top = 82.0
-margin_right = 167.0
+margin_right = 98.0
 margin_bottom = 101.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
