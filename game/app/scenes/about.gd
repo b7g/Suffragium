@@ -22,28 +22,23 @@ onready var _label := $MC/RichTextLabel
 # this is needed to ract to any language changes that might need retranslating
 func _notification(what):
 	if what == NOTIFICATION_TRANSLATION_CHANGED:
-		set_process(true)
+		_write_def()
+
+
+func _ready():
+	_write_to_label()
 
 
 func set_text(val: String):
 	text = val
-	set_process(true)
-
-
-# _write_to_label() will fail if the node is outside the tree.
-# In these cases there will always be some signal that reenables the check.
-# to prevent this it checks every frame if it can update the text and stops the check if it can
-# set_process(true) reenables the check
-func _process(_delta):
-	if is_inside_tree():
-		_write_to_label()
-		set_process(false)
+	# updating this is only needed in editor
+	# In-game it is updated by other sources
+	if Engine.editor_hint:
+		_write_def()
 
 
 func _write_to_label():
-	# Fails when weird stuff happens with scene transitions. Don't ask me why.
-	# Also fails in editor sometimes.
-	# It can be savely ignored because it is called more than once!
+	# Fails in Editor when you edit the script.
 	if !is_instance_valid(_label):
 		return
 	# this part might need a refactor
