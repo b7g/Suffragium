@@ -15,7 +15,10 @@ font_data = ExtResource( 4 )
 [sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxEmpty" id=22]
+[sub_resource type="StyleBoxFlat" id=24]
+draw_center = false
+shadow_color = Color( 0, 0, 0, 0.133333 )
+shadow_size = 6
 
 [sub_resource type="ShaderMaterial" id=20]
 shader = ExtResource( 6 )
@@ -173,7 +176,7 @@ margin_top = 12.0
 margin_right = 662.0
 margin_bottom = 412.0
 rect_min_size = Vector2( 650, 400 )
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -347,15 +350,15 @@ margin_bottom = 229.0
 custom_constants/separation = 16
 
 [node name="Description" type="RichTextLabel" parent="PopupDialogInfo/VC/InfoSection/HC"]
-margin_right = 484.0
+margin_right = 388.0
 margin_bottom = 213.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 bbcode_enabled = true
 
 [node name="VSeparator" type="VSeparator" parent="PopupDialogInfo/VC/InfoSection/HC"]
-margin_left = 500.0
-margin_right = 504.0
+margin_left = 404.0
+margin_right = 408.0
 margin_bottom = 213.0
 custom_styles/separator = SubResource( 16 )
 __meta__ = {
@@ -363,14 +366,13 @@ __meta__ = {
 }
 
 [node name="VC" type="VBoxContainer" parent="PopupDialogInfo/VC/InfoSection/HC"]
-margin_left = 520.0
+margin_left = 424.0
 margin_right = 618.0
 margin_bottom = 213.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.4
 
 [node name="Label" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
-margin_right = 98.0
+margin_right = 194.0
 margin_bottom = 19.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
@@ -381,7 +383,7 @@ __meta__ = {
 
 [node name="LabelAuthor" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
 margin_top = 24.0
-margin_right = 98.0
+margin_right = 194.0
 margin_bottom = 43.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
@@ -393,13 +395,13 @@ __meta__ = {
 
 [node name="Control" type="Control" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
 margin_top = 48.0
-margin_right = 98.0
+margin_right = 194.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="Label2" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
 margin_top = 58.0
-margin_right = 98.0
+margin_right = 194.0
 margin_bottom = 77.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
@@ -410,7 +412,7 @@ __meta__ = {
 
 [node name="LabelVersion" type="Label" parent="PopupDialogInfo/VC/InfoSection/HC/VC"]
 margin_top = 82.0
-margin_right = 98.0
+margin_right = 194.0
 margin_bottom = 101.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
