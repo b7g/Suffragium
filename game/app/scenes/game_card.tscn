@@ -89,6 +89,7 @@ margin_left = 74.0
 margin_right = 296.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
+custom_constants/separation = 6
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -107,9 +108,9 @@ __meta__ = {
 }
 
 [node name="HC" type="HBoxContainer" parent="Card/TitleSection/VC"]
-margin_top = 34.0
+margin_top = 35.0
 margin_right = 222.0
-margin_bottom = 53.0
+margin_bottom = 54.0
 custom_constants/separation = 4
 __meta__ = {
 "_edit_use_anchors_": false
@@ -358,6 +359,7 @@ margin_right = 388.0
 margin_bottom = 213.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+custom_constants/line_separation = 3
 bbcode_enabled = true
 
 [node name="VSeparator" type="VSeparator" parent="PopupDialogInfo/VC/InfoSection/HC"]
