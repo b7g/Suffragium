@@ -21,42 +21,47 @@ script = ExtResource( 5 )
 margin_right = 1024.0
 margin_bottom = 52.0
 
-[node name="VC" type="HBoxContainer" parent="MenuBar"]
+[node name="HC" type="HBoxContainer" parent="MenuBar"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 1016.0
 margin_bottom = 44.0
 
-[node name="LogoBadge" type="TextureRect" parent="MenuBar/VC"]
+[node name="LogoBadge" type="TextureRect" parent="MenuBar/HC"]
 margin_right = 36.0
 margin_bottom = 36.0
 texture = ExtResource( 2 )
 
-[node name="ButtonGames" type="Button" parent="MenuBar/VC"]
+[node name="Spacer" type="Control" parent="MenuBar/HC"]
 margin_left = 41.0
-margin_right = 136.0
+margin_right = 41.0
+margin_bottom = 36.0
+
+[node name="ButtonGames" type="Button" parent="MenuBar/HC"]
+margin_left = 46.0
+margin_right = 141.0
 margin_bottom = 36.0
 text = "T_GAMES"
 
-[node name="ButtonAbout" type="Button" parent="MenuBar/VC"]
-margin_left = 141.0
-margin_right = 337.0
+[node name="ButtonAbout" type="Button" parent="MenuBar/HC"]
+margin_left = 146.0
+margin_right = 342.0
 margin_bottom = 36.0
 text = "T_ABOUT_SUFFRAGIUM"
 
-[node name="ButtonParticipate" type="Button" parent="MenuBar/VC"]
-margin_left = 342.0
-margin_right = 480.0
+[node name="ButtonParticipate" type="Button" parent="MenuBar/HC"]
+margin_left = 347.0
+margin_right = 485.0
 margin_bottom = 36.0
 text = "T_PARTICIPATE"
 
-[node name="ButtonReportBug" type="Button" parent="MenuBar/VC"]
-margin_left = 485.0
-margin_right = 641.0
+[node name="ButtonReportBug" type="Button" parent="MenuBar/HC"]
+margin_left = 490.0
+margin_right = 646.0
 margin_bottom = 36.0
 text = "T_REPORT_A_BUG"
 
-[node name="ButtonSettings" type="Button" parent="MenuBar/VC"]
+[node name="ButtonSettings" type="Button" parent="MenuBar/HC"]
 margin_left = 870.0
 margin_right = 1008.0
 margin_bottom = 36.0
@@ -76,6 +81,7 @@ __meta__ = {
 }
 
 [node name="Games" type="VBoxContainer" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 0
@@ -150,7 +156,6 @@ custom_constants/hseparation = 4
 columns = 3
 
 [node name="About" type="ScrollContainer" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -342,11 +347,11 @@ margin_right = 300.0
 margin_bottom = 19.0
 flat = true
 
-[connection signal="pressed" from="MenuBar/VC/ButtonGames" to="." method="_on_ButtonGames_pressed"]
-[connection signal="pressed" from="MenuBar/VC/ButtonAbout" to="." method="_on_ButtonAbout_pressed"]
-[connection signal="pressed" from="MenuBar/VC/ButtonParticipate" to="." method="_on_ButtonParticipate_pressed"]
-[connection signal="pressed" from="MenuBar/VC/ButtonReportBug" to="." method="_on_ButtonReportBug_pressed"]
-[connection signal="pressed" from="MenuBar/VC/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
+[connection signal="pressed" from="MenuBar/HC/ButtonGames" to="." method="_on_ButtonGames_pressed"]
+[connection signal="pressed" from="MenuBar/HC/ButtonAbout" to="." method="_on_ButtonAbout_pressed"]
+[connection signal="pressed" from="MenuBar/HC/ButtonParticipate" to="." method="_on_ButtonParticipate_pressed"]
+[connection signal="pressed" from="MenuBar/HC/ButtonReportBug" to="." method="_on_ButtonReportBug_pressed"]
+[connection signal="pressed" from="MenuBar/HC/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
 [connection signal="item_selected" from="TabContainer/Games/MC/Toolbar/OptionButtonSorting" to="." method="_on_OptionButtonSorting_item_selected"]
 [connection signal="meta_clicked" from="TabContainer/About/MC/RichTextLabel" to="TabContainer/About" method="_on_RichTextLabel_meta_clicked"]
 [connection signal="pressed" from="TabContainer/Settings/MC/VC/VC/ButtonResetDefaults" to="TabContainer/Settings" method="_on_ButtonResetDefaults_pressed"]
