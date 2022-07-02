@@ -195,7 +195,7 @@ title_font = ExtResource( 4 )
 
 [node name="MC" type="MarginContainer" parent="TabContainer/About"]
 margin_right = 1024.0
-margin_bottom = 829.0
+margin_bottom = 858.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -203,15 +203,15 @@ size_flags_vertical = 3
 margin_left = 15.0
 margin_top = 15.0
 margin_right = 1009.0
-margin_bottom = 814.0
+margin_bottom = 843.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/line_separation = 4
 bbcode_enabled = true
 text = "T_ABOUT_SUFFRAGIUM
 
 T_ABOUT_SUFFRAGIUM_1
 T_ABOUT_SUFFRAGIUM_2
-
 
 
 T_PARTICIPATE
@@ -232,7 +232,6 @@ T_PARTICIPATE_POSSIBILITIES_4
 T_PARTICIPATE_GUIDES
 Contributing to Suffragium
 How to add a game
-
 
 
 T_REPORT_A_BUG

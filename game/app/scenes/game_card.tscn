@@ -89,14 +89,17 @@ margin_left = 74.0
 margin_right = 296.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
+custom_constants/separation = 6
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelTitle" type="Label" parent="Card/TitleSection/VC"]
+margin_top = 10.0
 margin_right = 222.0
-margin_bottom = 40.0
-size_flags_vertical = 3
+margin_bottom = 29.0
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 1 )
 text = "<game title>"
 valign = 1
@@ -105,9 +108,9 @@ __meta__ = {
 }
 
 [node name="HC" type="HBoxContainer" parent="Card/TitleSection/VC"]
-margin_top = 45.0
+margin_top = 35.0
 margin_right = 222.0
-margin_bottom = 64.0
+margin_bottom = 54.0
 custom_constants/separation = 4
 __meta__ = {
 "_edit_use_anchors_": false
@@ -222,19 +225,21 @@ margin_left = 74.0
 margin_right = 277.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
+alignment = 1
 
 [node name="LabelTitle" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title"]
+margin_top = 10.0
 margin_right = 203.0
-margin_bottom = 40.0
-size_flags_vertical = 3
+margin_bottom = 29.0
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 10 )
 text = "<game title>"
 valign = 1
 
 [node name="HC" type="HBoxContainer" parent="PopupDialogInfo/VC/TitleSection/HC/Title"]
-margin_top = 45.0
+margin_top = 34.0
 margin_right = 203.0
-margin_bottom = 64.0
+margin_bottom = 53.0
 custom_constants/separation = 4
 
 [node name="Label" type="Label" parent="PopupDialogInfo/VC/TitleSection/HC/Title/HC"]
@@ -354,6 +359,7 @@ margin_right = 388.0
 margin_bottom = 213.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+custom_constants/line_separation = 3
 bbcode_enabled = true
 
 [node name="VSeparator" type="VSeparator" parent="PopupDialogInfo/VC/InfoSection/HC"]
