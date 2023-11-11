@@ -21,6 +21,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
+GameServer="*res://client/Autoload/GameServer.gd"
+ServerInfo="*res://client/Autoload/ServerInfo.gd"
 GameManager="*res://app/singleton/game_manager.gd"
 UserSettings="*res://app/singleton/user_settings.gd"
 Utils="*res://app/singleton/utils.gd"

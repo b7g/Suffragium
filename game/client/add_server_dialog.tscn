@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnoowwp5sdy4x"]
+
+[ext_resource type="Script" path="res://client/add_server_dialog.gd" id="1_b7irr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8p82o"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0, 1, 1)
+
+[node name="AddServerDialog" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+script = ExtResource("1_b7irr")
+metadata/_edit_lock_ = true
+
+[node name="CC" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="PC" type="PanelContainer" parent="CC"]
+custom_minimum_size = Vector2(300, 2.08165e-12)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8p82o")
+
+[node name="VC" type="VBoxContainer" parent="CC/PC"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CC/PC/VC"]
+layout_mode = 2
+text = "Add a server"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CC/PC/VC"]
+layout_mode = 2
+text = "IP address"
+
+[node name="ServerIP" type="LineEdit" parent="CC/PC/VC"]
+layout_mode = 2
+placeholder_text = "127.0.0.1"
+
+[node name="AddServer" type="Button" parent="CC/PC/VC"]
+layout_mode = 2
+text = "Add"
+
+[connection signal="text_submitted" from="CC/PC/VC/ServerIP" to="." method="_on_server_ip_text_submitted"]
+[connection signal="pressed" from="CC/PC/VC/AddServer" to="." method="_on_add_server_pressed"]

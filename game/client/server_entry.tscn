@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://v54w54pygi4f"]
+
+[ext_resource type="Script" path="res://client/server_entry.gd" id="1_k3u0y"]
+
+[node name="ServerEntry" type="PanelContainer"]
+offset_right = 500.0
+offset_bottom = 82.0
+script = ExtResource("1_k3u0y")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HC" type="HBoxContainer" parent="MC"]
+layout_mode = 2
+
+[node name="VC" type="VBoxContainer" parent="MC/HC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelName" type="Label" parent="MC/HC/VC"]
+layout_mode = 2
+
+[node name="LabelIP" type="Label" parent="MC/HC/VC"]
+layout_mode = 2
+
+[node name="ButtonConnect" type="Button" parent="MC/HC"]
+layout_mode = 2
+text = "Connect"
+
+[node name="ButtonDelete" type="Button" parent="MC/HC"]
+layout_mode = 2
+text = "Delete"
+
+[connection signal="pressed" from="MC/HC/ButtonConnect" to="." method="_on_button_connect_pressed"]
+[connection signal="pressed" from="MC/HC/ButtonDelete" to="." method="_on_button_delete_pressed"]

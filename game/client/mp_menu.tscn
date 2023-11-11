@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba6fbvky2rn4i"]
+
+[ext_resource type="Script" path="res://client/mp_menu.gd" id="1_hovjx"]
+
+[node name="MpMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_hovjx")
+metadata/_edit_lock_ = true
+
+[node name="VC" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HC" type="HBoxContainer" parent="VC"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="VC/HC"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Suffragium Multiplayer"
+vertical_alignment = 1
+
+[node name="AddServer" type="Button" parent="VC/HC"]
+layout_mode = 2
+text = "Add server"
+
+[node name="SC" type="ScrollContainer" parent="VC"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ServerList" type="VBoxContainer" parent="VC/SC"]
+layout_mode = 2
+
+[connection signal="pressed" from="VC/HC/AddServer" to="." method="_on_add_server_pressed"]
